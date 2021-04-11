@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+  
+   <bean id="List" class="solution2.Link">
+        <property name="qlist">
+            <list>
+                <ref bean="question1" />
+                <ref bean="question2" />
+                <ref bean="question3" />
+            </list>
+        </property>
+    </bean>
+    
+    
+    <bean id="set" class="solution2.Link">
+        <property name="qset">
+            <set>
+                <ref bean="question1"/>
+                <ref bean="question2"/>
+                <ref bean="question3"/>
+            </set>
+        </property>
+    </bean>
+
+    <bean id="map" class="solution2.Link">
+        <property name="qmap">
+            <map key-type="java.lang.String" value-type="com.example.question_2.Question">
+                <entry key="1" value-ref="question1"/>
+                <entry key="2" value-ref="question2"/>
+                <entry key="3" value-ref="question3"/>
+            </map>
+        </property>
+    </bean>
+    
+    <bean id="question1" class="solution2.Question">
+        <constructor-arg index="0" value="435"/>
+        <constructor-arg index="1" value="Capital of India?"/>
+        <constructor-arg index="2" value="New Delhi"/>
+    </bean>
+    <bean id="question2" class="solution2.Question">
+        <constructor-arg index="0" value="127"/>
+        <constructor-arg index="1" value="Application is working?"/>
+        <constructor-arg index="2" value="Yes"/>
+    </bean>
+    <bean id="question3" class="solution2.Question">
+        <constructor-arg index="0" value="756"/>
+        <constructor-arg index="1" value="Assignments Completed ?"/>
+        <constructor-arg index="2" value="Yes"/>
+    </bean>
+
+</beans>

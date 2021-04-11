@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<bean id="details" class="solution3.detail">
+        <property name="bankAccountRepository" ref="accountinfo"/>
+ </bean>
+ <bean id="accountinfo" class="solution3.BankAccountRepositoryImpl">
+        <property name="bankacc">
+            <map>
+                <entry key="1" value-ref="account1"/>
+                <entry key="2" value-ref="account2"/>
+                <entry key="3" value-ref="account3"/>
+            </map>
+        </property>
+    </bean>
+
+    <bean id="account1" class="solution3.BankAccount">
+        <property  name="accountId" value="2354"/>
+        <property name="accountHolderName" value="Rahul Yadav"/>
+        <property name="accountType" value="Saving"/>
+        <property name="accountBalance" value="500000"/>
+    </bean>
+    <bean id="account2" class="solution3.BankAccount" >
+        <property  name="accountId" value="4473"/>
+        <property name="accountHolderName" value="Priyanka Singh"/>
+        <property name="accountType" value="Current"/>
+        <property name="accountBalance" value="45000"/>
+    </bean>
+    <bean id="account3" class="solution3.BankAccount" >
+        <property  name="accountId" value="9800"/>
+        <property name="accountHolderName" value="Seema Verma"/>
+        <property name="accountType" value="Saving"/>
+        <property name="accountBalance" value="278000"/>
+    </bean>
+
+</beans>
